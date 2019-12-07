@@ -30,7 +30,14 @@ public class Main {
 
         records.put(d.getKey(), d);
         records.put(r.getKey(), r);
-        Show s = new Show();
+
+        IShow s = new Show('x');
+        IFiltering filter = new FilteringRecordType();
+        HashMap<String, Record> newRecords = filter.filter(records, "Book");
+        System.out.println("REKORDY W BIBLIOGRAFII PRZED FILTROWANIEM");
         s.show(records);
+        System.out.println("FILTROWANIE: TYLKO KSIĄŻKI");
+        s.show(newRecords);
+
     }
 }

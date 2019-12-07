@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4f01926-5e98-4c1b-b74a-9862d6782604" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ggbibtex/IShow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ggbibtex/Show.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ggbibtex/FilteringAuthor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ggbibtex/FilteringRecordType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ggbibtex/IFiltering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/MiscFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/MiscFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Record.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Record.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/RecordTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/RecordTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Show.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Show.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ggbibtex/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ggbibtex/MiscFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/MiscFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ggbibtex/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/Record.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ggbibtex/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/Show.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -143,11 +147,11 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.BibtexTest" />
       <item itemvalue="JUnit.BibtexTest.testCreateBookRecord" />
       <item itemvalue="JUnit.RecordTest.testifShowingGoodArticleCreatesException" />
       <item itemvalue="JUnit.RecordTest" />
-      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>

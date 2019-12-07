@@ -2,6 +2,7 @@ package ggbibtex;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Record {
     private Map<String, String> necessary;
@@ -46,7 +47,6 @@ public class Record {
         }
     }
 
-
     public RecordType getType() {
         return type;
     }
@@ -85,6 +85,55 @@ public class Record {
        return res;
     }
 
+    public String printSet(Map<String, String> map, char a, int len, int maxLength) {
+        String str = "";
+        String line = "";
+        for (String s : map.keySet()) {
+            if (map.get(s) == "") continue;
+            line = "";
+            line += " " + s;
+            if (s == "author") {
+                for (int i = 0; i < maxLength - s.length() + 1; ++i)
+                    line += " ";
+                line += a;
+                str += a;
+                int lineLen = line.length() + 1;
+                for (int i = 0; i < len - lineLen - 1; ++i)
+                    line += " ";
+                line += a + "\n";
+                str += line;
+                String[] authors = parseAuthors(map.get(s));
+                for (String author : authors) {
+                    line = Character.toString(a);
+                    for (int i = 0; i < lineLen - 2; ++i)
+                        line += " ";
+                    line += a + " >" + author;
+                    str += line;
+                    for (int i = 0; i < len - line.length() - 1; ++i)
+                        str += " ";
+                    str += a + "\n";
+                }
+                for (int i = 0; i < len; ++i)
+                    str += a;
+                str += "\n";
+                continue;
+            }
+            for (int i = 0; i < maxLength - s.length(); ++i)
+                line += " ";
+            line += " " + a + " " + map.get(s);
+            str += a;
+            str += line;
+            for (int i = 0; i < len - line.length() - 2; ++i)
+                str += " ";
+            str += a;
+            str += '\n';
+            for (int i = 0; i < len; ++i)
+                str += a;
+            str += '\n';
+        }
+        return str;
+    }
+
     public String print(char a) {
         int len = 50;
         try {
@@ -112,82 +161,14 @@ public class Record {
                 if (s.length() > maxLength)
                     maxLength = s.length();
             }
+            str += printSet(necessary, a, len, maxLength);
+            str += printSet(optional, a, len, maxLength);
 
-            for (String s : necessary.keySet()) {
-                line = "";
-                line += " " + s;
-
-
-                if (s == "author") {
-                    for (int i = 0; i < maxLength - s.length() + 1; ++i)
-                        line += " ";
-                    line += a;
-                    str += a;
-                    int lineLen = line.length() + 1;
-                    for (int i = 0; i < len - lineLen - 1; ++i)
-                        line += " ";
-                    line += a + "\n";
-                    str += line;
-
-                    String[] authors = parseAuthors(necessary.get(s));
-
-                    for (String author : authors) {
-                        line = Character.toString(a);
-                        for (int i = 0; i < lineLen - 2; ++i)
-                            line += " ";
-                        line += a + " >" + author;
-                        str += line;
-                        for (int i = 0; i < len - line.length() - 1; ++i)
-                             str += " ";
-                        str += a + "\n";
-
-
-                    }
-                    for (int i = 0; i < len; ++i)
-                        str += a;
-                    str += "\n";
-                    continue;
-                }
-
-
-                for (int i = 0; i < maxLength - s.length(); ++i)
-                   line += " ";
-
-                line += " " + a + " " + necessary.get(s);
-                str += a;
-                str += line;
-                for (int i = 0; i < len - line.length() - 2; ++i)
-                    str += " ";
-                str += a;
-                str += '\n';
-                for (int i = 0; i < len; ++i)
-                    str += a;
-                str += '\n';
-            }
-
-            for (String s : optional.keySet()) {
-                if (optional.get(s) == "") continue;
-                line = "";
-                line += " " + s;
-                for (int i = 0; i < maxLength - s.length(); ++i)
-                    line += " ";
-                line += " " + a + " " + optional.get(s);
-                str += a;
-                str += line;
-                for (int i = 0; i < len - line.length() - 2; ++i)
-                    str += " ";
-                str += a;
-                str += '\n';
-                for (int i = 0; i < len; ++i)
-                    str += a;
-                str += '\n';
-            }
             return str;
         }
         catch (Exception e) {
             System.out.println(this.key);
             return e.getMessage();
         }
-
     }
 }
