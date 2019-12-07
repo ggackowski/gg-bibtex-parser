@@ -6,10 +6,11 @@ import java.util.Map;
 public class Record {
     private Map<String, String> necessary;
     private Map<String, String> optional;
-
+    private String key;
     private RecordType type;
-    public Record(RecordType t) {
+    public Record(RecordType t, String key) {
        type = t;
+       this.key = key;
        necessary = new HashMap<String, String>();
        optional = new HashMap<String, String>();
     }
@@ -49,16 +50,145 @@ public class Record {
     public RecordType getType() {
         return type;
     }
+    public String getKey() { return key; }
+    public void setKey(String k) {
+       key = k;
+    }
+
+    static String[] parseAuthors(String authors) {
+        int i = 0;
+        String auth = authors;
+        int index = 0;
+        while (index != -1) {
+            index = auth.indexOf(" and ");
+            if (index != -1) {
+                auth = auth.substring(index + 5);
+                ++i;
+            }
+        }
+        if (i == 1) {
+            String [] res = new String[1];
+            res[1] = authors;
+            return res;
+        }
+       String[] res = new String[i + 1];
+       int j = 0;
+       index = 0;
+       while (index != -1) {
+           index = authors.indexOf(" and ");
+               if (authors.indexOf(" and ") != -1)
+               res[j] = authors.substring(0, authors.indexOf(" and "));
+               else res[j] = authors.substring(1);
+               j++;
+               authors = authors.substring(index + 4);
+       }
+       return res;
+    }
 
     @Override
     public String toString() {
-        String res = "Record type: " + getType() + "\nNecessary fields:\n";
-        for (String s : necessary.keySet())
-            res += s + ": " + necessary.get(s) + "\n";
-        res += "Optional fields:\n";
-        for (String s : optional.keySet())
-            res += s + ": " + optional.get(s) + "\n";
-        return res;
+        char a = '*';
+        int len = 30;
+        try {
+            String str = "";
+            for (String s : necessary.keySet())
+                if (necessary.get(s) == "") throw new Exception("Not enough necessary fields");
+
+            for (int i = 0; i < len; ++i) str += a;
+            str += '\n';
+            str += a;
+            String line = " " + getType() + " (" + getKey() + ")";
+            str += line;
+            for (int i = 0; i < len - line.length() - 2; ++i) str += " ";
+            str += a;
+            str += '\n';
+            for (int i = 0; i < len; ++i)
+                str += a;
+            str += '\n';
+            int maxLength = 0;
+            for (String s : necessary.keySet()) {
+               if (s.length() > maxLength)
+                   maxLength = s.length();
+            }
+            for (String s : optional.keySet()) {
+                if (s.length() > maxLength)
+                    maxLength = s.length();
+            }
+
+            for (String s : necessary.keySet()) {
+                line = "";
+                line += " " + s;
+
+
+                if (s == "author") {
+                    for (int i = 0; i < maxLength - s.length() + 1; ++i)
+                        line += " ";
+                    line += a;
+                    str += a;
+                    int lineLen = line.length() + 1;
+                    for (int i = 0; i < len - lineLen - 1; ++i)
+                        line += " ";
+                    line += a + "\n";
+                    str += line;
+
+                    String[] authors = parseAuthors(necessary.get(s));
+
+                    for (String author : authors) {
+                        line = "*";
+                        for (int i = 0; i < lineLen - 2; ++i)
+                            line += " ";
+                        line += "* >" + author;
+                        str += line;
+                        for (int i = 0; i < len - line.length() - 1; ++i)
+                             str += " ";
+                        str += a + "\n";
+
+
+                    }
+                    for (int i = 0; i < len; ++i)
+                        str += a;
+                    str += "\n";
+                    continue;
+                }
+
+
+                for (int i = 0; i < maxLength - s.length(); ++i)
+                   line += " ";
+
+                line += " " + a + " " + necessary.get(s);
+                str += a;
+                str += line;
+                for (int i = 0; i < len - line.length() - 2; ++i)
+                    str += " ";
+                str += a;
+                str += '\n';
+                for (int i = 0; i < len; ++i)
+                    str += a;
+                str += '\n';
+            }
+
+            for (String s : optional.keySet()) {
+                if (optional.get(s) == "") continue;
+                line = "";
+                line += " " + s;
+                for (int i = 0; i < maxLength - s.length(); ++i)
+                    line += " ";
+                line += " " + a + " " + optional.get(s);
+                str += a;
+                str += line;
+                for (int i = 0; i < len - line.length() - 2; ++i)
+                    str += " ";
+                str += a;
+                str += '\n';
+                for (int i = 0; i < len; ++i)
+                    str += a;
+                str += '\n';
+            }
+            return str;
+        }
+        catch (Exception e) {
+            return e.getMessage();
+        }
 
     }
 }

@@ -1,4 +1,21 @@
 package ggbibtex;
 
-public class UnpublishedFactory {
+public class UnpublishedFactory implements  IFactory{
+
+    @Override
+    public String[] getNecessary() {
+        String[] necessary = {"auhor", "title", "note"};
+        return necessary;
+    }
+
+    @Override
+    public String[] getOptional() {
+        String[] optional = {"year", "month", "key"};
+        return optional;
+    }
+
+
+    public static UnpublishedFactory getInstance() {
+        return new UnpublishedFactory();
+    }
 }

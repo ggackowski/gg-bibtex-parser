@@ -23,7 +23,6 @@ public class Bibtex {
         catch (ReflectiveOperationException e) {
             System.out.println("other error");
         }
-        if (record == null) System.out.println("no pieknie");
         return record;
     }
 }

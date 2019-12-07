@@ -1,13 +1,10 @@
 package ggbibtex;
 
 public class BookFactory implements IFactory {
-    @Override
-    public Record produceRecord() {
-        return null;
-    }
+
     @Override
     public String[] getNecessary() {
-        String[] necessary = {"author", "editor", "title", "publisher", "year"};
+        String[] necessary = {"author", "title", "publisher", "year"};
         return necessary;
     }
 
@@ -15,5 +12,9 @@ public class BookFactory implements IFactory {
     public String[] getOptional() {
         String[] optional = {"volume", "series", "number", "pages", "month", "note", "key"};
         return optional;
+    }
+
+    public static BookFactory getInstance() {
+        return new BookFactory();
     }
 }

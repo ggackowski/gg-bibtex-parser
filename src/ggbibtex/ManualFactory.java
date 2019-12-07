@@ -1,10 +1,7 @@
 package ggbibtex;
 
 public class ManualFactory implements IFactory {
-    @Override
-    public Record produceRecord() {
-        return null;
-    }
+
     @Override
     public String[] getNecessary() {
         String[] necessary = {"title"};
@@ -15,5 +12,9 @@ public class ManualFactory implements IFactory {
     public String[] getOptional() {
         String[] optional = {"author", "organization", "address", "edition", "month", "year", "note", "key"};
         return optional;
+    }
+
+    public static ManualFactory getInstance() {
+        return new ManualFactory();
     }
 }
