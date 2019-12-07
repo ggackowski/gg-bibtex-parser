@@ -66,9 +66,9 @@ public class Record {
                 ++i;
             }
         }
-        if (i == 1) {
+        if (i == 0) {
             String [] res = new String[1];
-            res[1] = authors;
+            res[0] = authors;
             return res;
         }
        String[] res = new String[i + 1];
@@ -85,15 +85,13 @@ public class Record {
        return res;
     }
 
-    @Override
-    public String toString() {
-        char a = '*';
-        int len = 30;
+    public String print(char a) {
+        int len = 50;
         try {
             String str = "";
-            for (String s : necessary.keySet())
+            for (String s : necessary.keySet()) {
                 if (necessary.get(s) == "") throw new Exception("Not enough necessary fields");
-
+            }
             for (int i = 0; i < len; ++i) str += a;
             str += '\n';
             str += a;
@@ -134,10 +132,10 @@ public class Record {
                     String[] authors = parseAuthors(necessary.get(s));
 
                     for (String author : authors) {
-                        line = "*";
+                        line = Character.toString(a);
                         for (int i = 0; i < lineLen - 2; ++i)
                             line += " ";
-                        line += "* >" + author;
+                        line += a + " >" + author;
                         str += line;
                         for (int i = 0; i < len - line.length() - 1; ++i)
                              str += " ";
@@ -187,6 +185,7 @@ public class Record {
             return str;
         }
         catch (Exception e) {
+            System.out.println(this.key);
             return e.getMessage();
         }
 

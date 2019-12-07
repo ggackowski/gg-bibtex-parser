@@ -14,7 +14,7 @@ public class MiscFactory implements  IFactory {
         return optional;
     }
 
-    public static ManualFactory getInstance() {
-        return new ManualFactory();
+    public static MiscFactory getInstance() {
+        return new MiscFactory();
     }
 }
