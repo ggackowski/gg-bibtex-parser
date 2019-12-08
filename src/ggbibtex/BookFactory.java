@@ -10,7 +10,8 @@ public class BookFactory implements IFactory {
 
     @Override
     public String[] getOptional() {
-        String[] optional = {"volume", "series", "number", "pages", "month", "note", "key"};
+        String[] optional = {"volume", "series", "address", "edition", "edition", "month", "note", "key"};
+
         return optional;
     }
 

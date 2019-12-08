@@ -4,7 +4,7 @@ public class MthesisFactory implements IFactory {
 
     @Override
     public String[] getNecessary() {
-        String[] necessary = {"auhor", "title", "school", "year"};
+        String[] necessary = {"author", "title", "school", "year"};
         return necessary;
     }
 

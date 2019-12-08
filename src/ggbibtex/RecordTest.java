@@ -12,11 +12,11 @@ class RecordTest {
     }
 
     @Test
-    void testIfShowingWrongArticleCreatesExeption() {
+    void testIfShowingWrongArticleCreatesException() {
         Record r = ArticleFactory.getInstance().produceRecord();
         r.fillNecessary("title", "test");
         r.fillNecessary("year", "1993");
-        assertEquals("Not enough necessary fields", r.toString());
+        assertEquals("Not enough necessary fields", r.print('a', 70));
     }
 
     @Test
@@ -27,6 +27,6 @@ class RecordTest {
         r.fillNecessary("journal", "Bravo");
         r.fillNecessary("year", "2019");
         System.out.println(r);
-        assertNotEquals("Not enough necessary fields", r.toString());
+        assertNotEquals("Not enough necessary fields", r.print('a', 70));
     }
 }

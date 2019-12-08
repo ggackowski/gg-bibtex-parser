@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4f01926-5e98-4c1b-b74a-9862d6782604" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ggbibtex/FilteringAuthor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ggbibtex/FilteringRecordType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ggbibtex/IFiltering.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ggbibtex/FilteringRecordTypeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/BookFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/BookFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/MiscFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/MiscFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/MthesisFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/MthesisFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Record.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Record.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/RecordTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/RecordTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Show.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Show.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ggbibtex/BookFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/BookFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ggbibtex/FilteringAuthor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/FilteringAuthor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ggbibtex/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ggbibtex/MthesisFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/MthesisFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ggbibtex/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/Record.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ggbibtex/RecordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/RecordTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ggbibtex/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/Show.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,9 +28,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -99,7 +101,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BibtexTest.testCreateBookRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FilteringRecordTypeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GG Bibtex Parser" />
       <extension name="coverage">
         <pattern>
@@ -108,9 +110,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ggbibtex" />
-      <option name="MAIN_CLASS_NAME" value="ggbibtex.BibtexTest" />
-      <option name="METHOD_NAME" value="testCreateBookRecord" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="ggbibtex.FilteringRecordTypeTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GG Bibtex Parser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ggbibtex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ggbibtex" />
+      <option name="MAIN_CLASS_NAME" value="ggbibtex.IFactoryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -130,36 +146,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RecordTest.testifShowingGoodArticleCreatesException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="GG Bibtex Parser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ggbibtex.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ggbibtex" />
-      <option name="MAIN_CLASS_NAME" value="ggbibtex.RecordTest" />
-      <option name="METHOD_NAME" value="testifShowingGoodArticleCreatesException" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.BibtexTest" />
-      <item itemvalue="JUnit.BibtexTest.testCreateBookRecord" />
-      <item itemvalue="JUnit.RecordTest.testifShowingGoodArticleCreatesException" />
       <item itemvalue="JUnit.RecordTest" />
+      <item itemvalue="JUnit.IFactoryTest" />
+      <item itemvalue="JUnit.FilteringRecordTypeTest" />
+      <item itemvalue="JUnit.BibtexTest" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.RecordTest" />
-        <item itemvalue="JUnit.RecordTest.testifShowingGoodArticleCreatesException" />
         <item itemvalue="JUnit.BibtexTest" />
-        <item itemvalue="JUnit.BibtexTest.testCreateBookRecord" />
+        <item itemvalue="JUnit.FilteringRecordTypeTest" />
+        <item itemvalue="JUnit.IFactoryTest" />
+        <item itemvalue="JUnit.RecordTest" />
       </list>
     </recent_temporary>
   </component>

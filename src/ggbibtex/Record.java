@@ -59,12 +59,9 @@ public class Record {
         int i = 0;
         String auth = authors;
         int index = 0;
-        while (index != -1) {
-            index = auth.indexOf(" and ");
-            if (index != -1) {
-                auth = auth.substring(index + 5);
+        while (auth.contains(" and ")) {
+                auth = auth.substring(auth.indexOf(" and ") + 5);
                 ++i;
-            }
         }
         if (i == 0) {
             String [] res = new String[1];
@@ -73,15 +70,12 @@ public class Record {
         }
        String[] res = new String[i + 1];
        int j = 0;
-       index = 0;
-       while (index != -1) {
-           index = authors.indexOf(" and ");
-               if (authors.indexOf(" and ") != -1)
+       while (authors.contains(" and ")) {
                res[j] = authors.substring(0, authors.indexOf(" and "));
-               else res[j] = authors.substring(1);
                j++;
-               authors = authors.substring(index + 4);
+               authors = authors.substring(authors.indexOf(" and ") + 5);
        }
+       res[j] = authors;
        return res;
     }
 
@@ -134,8 +128,7 @@ public class Record {
         return str;
     }
 
-    public String print(char a) {
-        int len = 50;
+    public String print(char a, int len) {
         try {
             String str = "";
             for (String s : necessary.keySet()) {
@@ -163,7 +156,6 @@ public class Record {
             }
             str += printSet(necessary, a, len, maxLength);
             str += printSet(optional, a, len, maxLength);
-
             return str;
         }
         catch (Exception e) {
