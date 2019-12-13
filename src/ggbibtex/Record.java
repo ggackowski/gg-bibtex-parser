@@ -16,6 +16,12 @@ public class Record {
        optional = new HashMap<String, String>();
     }
 
+    public boolean hasNecessary(String name) { return necessary.containsKey(name);}
+    public boolean hasOptional(String name) { return optional.containsKey(name);}
+    public String getNecessary(String name) { return necessary.get(name); }
+    public String getOptional(String name) { return optional.get(name); }
+
+
     public void addNecessary(String name) {
         necessary.put(name, "");
     }
@@ -56,6 +62,15 @@ public class Record {
     }
 
     static String[] parseAuthors(String authors) {
+        String[] strs = authors.split(" and ");
+        String[] res = new String[strs.length];
+        for (int i = 0; i < strs.length; ++i) {
+            String surname = strs[i].split(",")[0];
+            String name = strs[i].split(",")[1];
+            res[i] = name + " " + surname;
+        }
+        return res;
+        /*
         int i = 0;
         String auth = authors;
         int index = 0;
@@ -77,6 +92,7 @@ public class Record {
        }
        res[j] = authors;
        return res;
+       */
     }
 
     public String printSet(Map<String, String> map, char a, int len, int maxLength) {

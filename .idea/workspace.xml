@@ -2,21 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4f01926-5e98-4c1b-b74a-9862d6782604" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ggbibtex/FilteringRecordTypeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ggbibtex/IStringSubstitioner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ggbibtex/Parser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ggbibtex/ParserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ggbibtex/StringSubstitioner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ggbibtex/StringSubstitionerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/ArticleFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/ArticleFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Bibtex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Bibtex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/BibtexTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/BibtexTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/BookFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/BookFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/BookletFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/BookletFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/FilteringAuthor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/FilteringAuthor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/FilteringRecordType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/FilteringRecordType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/FilteringRecordTypeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/FilteringRecordTypeTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/IFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/IFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/IFactoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/IFactoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/IFiltering.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/IFiltering.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/IShow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/IShow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/InbookFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/InbookFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/IncollectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/IncollectionFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/InproceedingFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/InproceedingFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/ManualFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/ManualFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/MiscFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/MiscFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/MthesisFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/MthesisFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/PhdthesisFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/PhdthesisFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Record.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Record.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/RecordTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/RecordTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/RecordType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/RecordType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Show.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/Show.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ggbibtex/BookFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/BookFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/TechreportFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/TechreportFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/UnpublishedFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GG Bibtex Parser/ggbibtex/UnpublishedFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ggbibtex/FilteringAuthor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/FilteringAuthor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ggbibtex/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ggbibtex/MthesisFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/MthesisFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ggbibtex/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/Record.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ggbibtex/RecordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/RecordTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ggbibtex/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ggbibtex/Show.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +71,11 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
+    <property name="last.edited.regexp" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -72,10 +97,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.StringSubstitionerTest">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ggbibtex.Main" />
       <module name="GG Bibtex Parser" />
+      <option name="PROGRAM_PARAMETERS" value="input.txt" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ggbibtex.*" />
@@ -131,7 +157,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RecordTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GG Bibtex Parser" />
       <extension name="coverage">
         <pattern>
@@ -140,26 +166,42 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ggbibtex" />
-      <option name="MAIN_CLASS_NAME" value="ggbibtex.RecordTest" />
+      <option name="MAIN_CLASS_NAME" value="ggbibtex.ParserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringSubstitionerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GG Bibtex Parser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ggbibtex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ggbibtex" />
+      <option name="MAIN_CLASS_NAME" value="ggbibtex.StringSubstitionerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.RecordTest" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.IFactoryTest" />
       <item itemvalue="JUnit.FilteringRecordTypeTest" />
       <item itemvalue="JUnit.BibtexTest" />
-      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.ParserTest" />
+      <item itemvalue="JUnit.StringSubstitionerTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.StringSubstitionerTest" />
+        <item itemvalue="JUnit.ParserTest" />
         <item itemvalue="JUnit.BibtexTest" />
         <item itemvalue="JUnit.FilteringRecordTypeTest" />
         <item itemvalue="JUnit.IFactoryTest" />
-        <item itemvalue="JUnit.RecordTest" />
       </list>
     </recent_temporary>
   </component>
