@@ -12,7 +12,7 @@ public class StringSubstitioner implements IStringSubstitioner {
         while (m.find()) {
             String varName = m.group(1);
             String varValue = m.group(2);
-            subs.put(varName, varValue);
+            subs.put(varName, "\"" + varValue + "\"");
         }
         String res = "";
         for (String s : subs.keySet()) {

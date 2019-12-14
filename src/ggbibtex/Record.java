@@ -21,6 +21,14 @@ public class Record {
     public String getNecessary(String name) { return necessary.get(name); }
     public String getOptional(String name) { return optional.get(name); }
 
+    public void printDev() {
+        System.out.println(this.type.toString());
+        System.out.println(this.key);
+        for (String s : necessary.keySet())
+            System.out.println(s + ": " + necessary.get(s));
+        for (String s : optional.keySet())
+            System.out.println(s + ": " + optional.get(s));
+    }
 
     public void addNecessary(String name) {
         necessary.put(name, "");
