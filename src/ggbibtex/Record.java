@@ -16,10 +16,19 @@ public class Record {
        optional = new HashMap<String, String>();
     }
 
-    public boolean hasNecessary(String name) { return necessary.containsKey(name);}
-    public boolean hasOptional(String name) { return optional.containsKey(name);}
-    public String getNecessary(String name) { return necessary.get(name); }
-    public String getOptional(String name) { return optional.get(name); }
+    public static String mkstr(String s) {
+        if (s.equals("")) return "";
+        String res = new String();
+        res += Character.toUpperCase(s.charAt(0));
+        for (int i = 1; i < s.length(); ++i)
+            res += Character.toLowerCase(s.charAt(i));
+        return res;
+    }
+
+    public boolean hasNecessary(String name) { return necessary.containsKey(Record.mkstr(name));}
+    public boolean hasOptional(String name) { return optional.containsKey(Record.mkstr(name));}
+    public String getNecessary(String name) { return necessary.get(Record.mkstr(name)); }
+    public String getOptional(String name) { return optional.get(Record.mkstr(name)); }
 
     public void printDev() {
         System.out.println(this.type.toString());
@@ -31,17 +40,17 @@ public class Record {
     }
 
     public void addNecessary(String name) {
-        necessary.put(name, "");
+        necessary.put(mkstr(name), "");
     }
 
     public void addOptional(String name) {
-        optional.put(name, "");
+        optional.put(mkstr(name), "");
     }
 
     public void fillNecessary(String name, String value) {
         try {
-            if (necessary.keySet().contains(name)) {
-                necessary.replace(name, value);
+            if (necessary.keySet().contains(mkstr(name))) {
+                necessary.replace(mkstr(name), value);
             }
             else throw new Exception();
         }
@@ -52,8 +61,8 @@ public class Record {
 
     public void fillOptional(String name, String value) {
         try {
-            if (optional.keySet().contains(name)) {
-                optional.replace(name, value);
+            if (optional.keySet().contains(mkstr(name))) {
+                optional.replace(mkstr(name), value);
             } else throw new Exception();
         }
         catch (Exception e) {
@@ -78,29 +87,6 @@ public class Record {
             res[i] = name + " " + surname;
         }
         return res;
-        /*
-        int i = 0;
-        String auth = authors;
-        int index = 0;
-        while (auth.contains(" and ")) {
-                auth = auth.substring(auth.indexOf(" and ") + 5);
-                ++i;
-        }
-        if (i == 0) {
-            String [] res = new String[1];
-            res[0] = authors;
-            return res;
-        }
-       String[] res = new String[i + 1];
-       int j = 0;
-       while (authors.contains(" and ")) {
-               res[j] = authors.substring(0, authors.indexOf(" and "));
-               j++;
-               authors = authors.substring(authors.indexOf(" and ") + 5);
-       }
-       res[j] = authors;
-       return res;
-       */
     }
 
     public String printSet(Map<String, String> map, char a, int len, int maxLength) {
@@ -110,7 +96,7 @@ public class Record {
             if (map.get(s) == "") continue;
             line = "";
             line += " " + s;
-            if (s == "author") {
+            if (s.equals("Author")) {
                 for (int i = 0; i < maxLength - s.length() + 1; ++i)
                     line += " ";
                 line += a;

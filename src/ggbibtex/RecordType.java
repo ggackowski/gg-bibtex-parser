@@ -1,5 +1,5 @@
 package ggbibtex;
 
 public enum RecordType {
-    Book, Article, Inproceeding, Manual, Booklet, Inbook, Incollection, Misc, Mthesis, Phdthesis, Techreport, Unpublished
+    Book, Article, Inproceedings, Manual, Booklet, Inbook, Incollection, Misc, Mastersthesis, Phdthesis, Techreport, Unpublished
 }

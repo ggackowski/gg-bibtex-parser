@@ -3,7 +3,7 @@ package ggbibtex;
 public class InbookFactory implements IFactory {
     @Override
     public String[] getNecessary() {
-        String[] necessary = {"author", "editor", "title", "chapter", "pages", "publisher", "year"};
+        String[] necessary = {"author", "title", "chapter", "pages", "publisher", "year"};
         return necessary;
     }
 

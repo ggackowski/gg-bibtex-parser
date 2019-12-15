@@ -1,11 +1,10 @@
-@article{article,
-  author  = "Peter Adams", 
-  title   = "The title of the work",
-  journal = "The name of the journal",
-  year    = 1993,
-  number  = 2,
-  pages   = "201-213",
-  month   = 7,
-  note    = "An optional note", 
-  volume  = 4
-}
+@ARTICLE{whole-journal,
+   key = "GAJ",
+   journal = "\mbox(G-Animal's) Journal",
+   year = 1986,
+   volume = 41,
+   title = "whole journal"
+   number = 7,
+   month = "jul",
+   author = "G Animal",
+   note = "The entire issue is devoted to gnats and gnus (this entry is a cross-referenced ARTICLE (journal))",}

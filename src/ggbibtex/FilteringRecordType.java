@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 public class FilteringRecordType implements IFiltering {
     public HashMap<String, Record> filter(HashMap<String, Record> records, String constr) {
+        if (constr.equals("")) return records;
         HashMap<String, Record> filtered = new HashMap<String, Record>();
         for (String s : records.keySet()) {
             RecordType type = RecordType.valueOf(constr);

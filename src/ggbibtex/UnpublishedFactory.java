@@ -4,7 +4,7 @@ public class UnpublishedFactory implements  IFactory{
 
     @Override
     public String[] getNecessary() {
-        String[] necessary = {"auhor", "title", "note"};
+        String[] necessary = {"author", "title", "note"};
         return necessary;
     }
 

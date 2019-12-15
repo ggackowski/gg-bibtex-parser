@@ -12,6 +12,12 @@ class RecordTest {
     }
 
     @Test
+    void testIfMakeStrWorks() {
+        String s = "IFmakeStrWORKS";
+        assertEquals(Record.mkstr(s), "Ifmakestrworks");
+    }
+
+    @Test
     void testIfShowingWrongArticleCreatesException() {
         Record r = ArticleFactory.getInstance().produceRecord();
         r.fillNecessary("title", "test");

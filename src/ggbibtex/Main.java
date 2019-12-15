@@ -9,59 +9,50 @@ import java.util.HashMap;
 public class Main {
 
     static HashMap<String, Record> records;
-
+    static IParser parser;
+    static IShow show;
 
 
     public static void main(String[] args) {
         String content = "";
+        String contentNoNewlines = "";
         try {
-            content = new String(Files.readAllBytes(Paths.get(args[0])));
-            System.out.println(content);
+
+            if (args.length == 0) {
+                System.out.println("Welcome to GG Bibtex Parser");
+                System.out.println("This piece of software was made by Grzegorz Gackowski in December 2019.");
+                System.out.println("How to run the program:");
+                System.out.println("1st argument (mandatory) - path to the BIBTEX source file");
+                System.out.println("2nd argument - authors of records you want to see");
+                System.out.println("3rd argument - type of record you want to display");
+            }
+            else {
+                content = new String(Files.readAllBytes(Paths.get(args[0])));
+                contentNoNewlines = content.replace("\r\n", " ").replace("\n", " ");
+                parser = new Parser();
+                records = parser.parse(contentNoNewlines);
+                show = new Show('█', 140);
+                String authorFilter = "";
+                String categoryFilter = "";
+                if (args.length > 1) {
+                    authorFilter = args[1];
+                }
+                if (args.length > 2) {
+                    categoryFilter = args[2];
+                }
+                IFiltering filterA = new FilteringRecordType();
+                HashMap<String, Record> newRecords = filterA.filter(records, categoryFilter);
+                IFiltering filterC = new FilteringAuthor();
+                HashMap<String, Record> newNewRecords = filterC.filter(newRecords, authorFilter);
+                show.show(newNewRecords);
+            }
         }
         catch (IOException e) {
-            System.out.println("IO error");
+            System.out.println("The path to the source file is invalid");
             e.printStackTrace();
         }
         catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("err");
+            System.out.println("Program has been launched without all necessary arguments");
         }
-
-        String test = "asodg odsfigj dfg";
-        String lastword = test.substring(test.lastIndexOf(" ") + 1);
-        System.out.println(lastword);
-        records = new HashMap<String, Record>();
-
-        Record r = BookFactory.getInstance().produceRecord();
-        r.fillNecessary("author", "Lipcoll, Dawid J. and Lawrie, D. H. and Sameh, A. H.");
-        r.fillNecessary("title" , "High Speed Computer and Algorithm Organization");
-        r.fillOptional("series", "Fast Computers");
-        r.fillNecessary("publisher", "Academic Press");
-        r.fillOptional("address", "New York");
-        r.fillOptional("edition", "Third");
-        r.fillOptional("month", "sep");
-        r.fillNecessary("year", "1977");
-        r.fillOptional("note", "This is a cross-referenced BOOK (collection) entry");
-        r.setKey("whole-collection");
-
-        Record d = ArticleFactory.getInstance().produceRecord();
-        d.fillNecessary("title", "The Gnats and Gnus Document Preparation System");
-        d.fillNecessary("author", "Aamport, Leaslie A.");
-        d.fillNecessary("journal", "G-Animal's Journal");
-        d.fillNecessary("year", "1986");
-        d.setKey("article-minimal");
-
-        records.put(d.getKey(), d);
-        records.put(r.getKey(), r);
-
-        IShow s = new Show('█', 70);
-        IFiltering filter = new FilteringRecordType();
-        HashMap<String, Record> newRecords = filter.filter(records, "Book");
-        System.out.println("Records before filtering");
-        s.show(records);
-        System.out.println("After filtering: only books");
-        IFiltering filterA = new FilteringAuthor();
-        HashMap<String, Record> newNewRecords = filterA.filter(newRecords, "D. H. Lawrie");
-        s.show(newNewRecords);
-
     }
 }

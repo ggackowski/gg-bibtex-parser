@@ -1,6 +1,6 @@
 package ggbibtex;
 
-public class InproceedingFactory implements IFactory {
+public class InproceedingsFactory implements IFactory {
 
     @Override
     public String[] getNecessary() {
@@ -14,7 +14,7 @@ public class InproceedingFactory implements IFactory {
         return optional;
     }
 
-    public static InproceedingFactory getInstance() {
-        return new InproceedingFactory();
+    public static InproceedingsFactory getInstance() {
+        return new InproceedingsFactory();
     }
 }

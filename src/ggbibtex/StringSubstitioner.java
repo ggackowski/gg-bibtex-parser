@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class StringSubstitioner implements IStringSubstitioner {
     public String substitute(String input) {
         HashMap<String, String> subs = new HashMap<>();
-        Pattern p = Pattern.compile("@string *\\{ *([a-zA-Z]*) *= *\"([^\"]*)\" *}");
+        Pattern p = Pattern.compile("@[Ss][Tt][Rr][Ii][Nn][Gg] *\\{ *([a-zA-Z0-9]*) *= *\"([^\"]*)\" *}");
         Matcher m = p.matcher(input);
         while (m.find()) {
             String varName = m.group(1);
@@ -18,6 +18,7 @@ public class StringSubstitioner implements IStringSubstitioner {
         for (String s : subs.keySet()) {
             res = input.replaceAll(s, subs.get(s));
         }
+        if (res.equals("")) res = input;
         return res;
     }
 }

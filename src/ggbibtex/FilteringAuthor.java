@@ -4,8 +4,10 @@ import java.util.HashMap;
 
 public class FilteringAuthor implements IFiltering {
     public HashMap<String, Record> filter(HashMap<String, Record> records, String constr) {
+        if (constr.equals(""))
+            return records;
         HashMap<String, Record> filtered = new HashMap<>();
-        String[] condition = constr.split(" ");
+
         for (String s : records.keySet()) {
             String authors = "";
             if (records.get(s).hasNecessary("author"))
@@ -15,14 +17,24 @@ public class FilteringAuthor implements IFiltering {
             if (authors != "") {
                 String[] authorsArray = authors.split(" and ");
                 for (String auth : authorsArray) {
+                    //System.out.println(auth);
                     int count = 0;
                     String[] namesSurname = auth.split(",");
-                    for (String ns : namesSurname) {
-                        for (String c : condition) {
-                            if (c.equals(ns)) count++;
+                    String surname = namesSurname[0];
+                    String[] names = namesSurname[1].split(" +");
+                    String authorns[] = auth.split(" +");
+                    for (String aut : authorns) {
+                        for (String na : names) {
+                            //System.out.println("porownanie " + aut + " z " + na);
+                            if (aut.equals(na)) count++;
                         }
                     }
-                    if (count > condition.length) filtered.put(s, records.get(s));
+                    boolean good = false;
+                    if (constr.substring(constr.lastIndexOf(' ') + 1, constr.length()).equals(surname))
+                        good = true;
+                    //System.out.println(surname);
+                    //System.out.println(constr.substring(constr.lastIndexOf(' ') + 1, constr.length()));
+                    if (good && count >= authorns.length - 1) filtered.put(s, records.get(s));
                 }
             }
         }

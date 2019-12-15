@@ -4,13 +4,13 @@ public class BookFactory implements IFactory {
 
     @Override
     public String[] getNecessary() {
-        String[] necessary = {"author", "title", "publisher", "year"};
+        String[] necessary = {"Author", "Title", "Publisher", "Year"};
         return necessary;
     }
 
     @Override
     public String[] getOptional() {
-        String[] optional = {"volume", "series", "address", "edition", "edition", "month", "note", "key"};
+        String[] optional = {"Volume", "Series", "Address", "Edition", "Month", "Note", "Key"};
 
         return optional;
     }

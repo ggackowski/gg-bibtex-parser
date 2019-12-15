@@ -1,6 +1,6 @@
 package ggbibtex;
 
-public class MthesisFactory implements IFactory {
+public class MastersthesisFactory implements IFactory {
 
     @Override
     public String[] getNecessary() {
@@ -14,7 +14,7 @@ public class MthesisFactory implements IFactory {
         return optional;
     }
 
-    public static MthesisFactory getInstance() {
-        return new MthesisFactory();
+    public static MastersthesisFactory getInstance() {
+        return new MastersthesisFactory();
     }
 }

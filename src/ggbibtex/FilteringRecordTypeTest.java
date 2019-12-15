@@ -16,7 +16,7 @@ class FilteringRecordTypeTest {
         r1.fillOptional("author", "JW");
         r1.setKey("AAA");
 
-        Record r2 = MthesisFactory.getInstance().produceRecord();
+        Record r2 = MastersthesisFactory.getInstance().produceRecord();
         r2.fillNecessary("author", "GG");
         r2.fillNecessary("title", "M");
         r2.fillNecessary("school", "AGH UST");
