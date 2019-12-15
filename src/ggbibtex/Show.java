@@ -10,8 +10,10 @@ public class Show implements IShow {
         length = l;
     }
     public void show(HashMap<String, Record> records) {
-       for (String s : records.keySet())
+       for (String s : records.keySet()) {
            System.out.println(records.get(s).print(a, length));
+           System.out.println("");
+       }
     }
 
 }

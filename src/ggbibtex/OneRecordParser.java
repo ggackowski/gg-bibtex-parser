@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 public class OneRecordParser implements IOneRecordParser {
     public Record parse(String input) {
         try {
+            //System.out.println("w parserze 1 el:  " + input);
             StringBuilder recordName = new StringBuilder(input);
             String letter = Character.toString(Character.toUpperCase(recordName.charAt(1)));
             recordName.replace(1, 2, letter);

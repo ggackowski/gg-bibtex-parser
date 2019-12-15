@@ -28,11 +28,10 @@ class RecordTest {
     @Test
     void testifShowingGoodArticleCreatesException() {
         Record r = ArticleFactory.getInstance().produceRecord();
-        r.fillNecessary("author", "Wąsik Justyn");
+        r.fillNecessary("author", "W J");
         r.fillNecessary("title", "Topologia w zadaniach");
         r.fillNecessary("journal", "Bravo");
         r.fillNecessary("year", "2019");
-        System.out.println(r);
         assertNotEquals("Not enough necessary fields", r.print('a', 70));
     }
 }

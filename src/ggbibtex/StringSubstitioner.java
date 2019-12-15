@@ -6,10 +6,12 @@ import java.util.regex.Pattern;
 
 public class StringSubstitioner implements IStringSubstitioner {
     public String substitute(String input) {
-        HashMap<String, String> subs = new HashMap<>();
-        Pattern p = Pattern.compile("@[Ss][Tt][Rr][Ii][Nn][Gg] *\\{ *([a-zA-Z0-9]*) *= *\"([^\"]*)\" *}");
+        //System.out.println(input);
+        HashMap<String, String> subs = new HashMap<>();//[Ss][Tt][Rr][Ii][Nn][Gg]
+        Pattern p = Pattern.compile("@string *\\{ *([a-zA-Z0-9_\\-]*) *= *\"([^\"]*)\" *} *", Pattern.CASE_INSENSITIVE);
         Matcher m = p.matcher(input);
         while (m.find()) {
+            //System.out.println(m.group(2));
             String varName = m.group(1);
             String varValue = m.group(2);
             subs.put(varName, "\"" + varValue + "\"");
@@ -19,6 +21,7 @@ public class StringSubstitioner implements IStringSubstitioner {
             res = input.replaceAll(s, subs.get(s));
         }
         if (res.equals("")) res = input;
+        //System.out.println(res);
         return res;
     }
 }

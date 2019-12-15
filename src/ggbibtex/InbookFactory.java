@@ -12,4 +12,8 @@ public class InbookFactory implements IFactory {
         String[] optional = {"volume", "number", "series", "type", "address", "edition", "month", "note", "key"};
         return optional;
     }
+
+    public static InbookFactory getInstance() {
+        return new InbookFactory();
+    }
 }

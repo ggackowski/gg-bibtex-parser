@@ -22,15 +22,15 @@ public class FilteringAuthor implements IFiltering {
                     String[] namesSurname = auth.split(",");
                     String surname = namesSurname[0];
                     String[] names = namesSurname[1].split(" +");
-                    String authorns[] = auth.split(" +");
+                    String authorns[] = constr.split(" +");
                     for (String aut : authorns) {
                         for (String na : names) {
                             //System.out.println("porownanie " + aut + " z " + na);
-                            if (aut.equals(na)) count++;
+                            if (aut.equalsIgnoreCase(na)) count++;
                         }
                     }
                     boolean good = false;
-                    if (constr.substring(constr.lastIndexOf(' ') + 1, constr.length()).equals(surname))
+                    if (constr.substring(constr.lastIndexOf(' ') + 1, constr.length()).equalsIgnoreCase(surname))
                         good = true;
                     //System.out.println(surname);
                     //System.out.println(constr.substring(constr.lastIndexOf(' ') + 1, constr.length()));

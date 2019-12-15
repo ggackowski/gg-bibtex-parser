@@ -3,7 +3,6 @@ package ggbibtex;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.sql.SQLOutput;
 import java.util.HashMap;
 
 public class Main {
@@ -23,8 +22,8 @@ public class Main {
                 System.out.println("This piece of software was made by Grzegorz Gackowski in December 2019.");
                 System.out.println("How to run the program:");
                 System.out.println("1st argument (mandatory) - path to the BIBTEX source file");
-                System.out.println("2nd argument - authors of records you want to see");
-                System.out.println("3rd argument - type of record you want to display");
+                System.out.println("2nd argument (optional) - authors of records that should be shown.\n                          For displaying all the authors write. \"\" ");
+                System.out.println("3rd argument (optional) - type of record that should be shown.");
             }
             else {
                 content = new String(Files.readAllBytes(Paths.get(args[0])));

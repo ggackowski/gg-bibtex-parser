@@ -37,8 +37,8 @@ class BibtexTest {
     }
 
     @Test
-    void testCreateInproceedingRecord() {
-        Record r = Bibtex.createRecord("Inproceeding");
+    void testCreateInproceedingsRecord() {
+        Record r = Bibtex.createRecord("Inproceedings");
         assertEquals(r.getType(), RecordType.Inproceedings);
     }
 
@@ -55,7 +55,7 @@ class BibtexTest {
     }
     @Test
     void testCreateMthesisRecord() {
-        Record r = Bibtex.createRecord("Mthesis");
+        Record r = Bibtex.createRecord("Mastersthesis");
         assertEquals(r.getType(), RecordType.Mastersthesis);
     }
 
